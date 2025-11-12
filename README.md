@@ -7,7 +7,7 @@
   <img src="https://img.shields.io/badge/Pandas-2.0%2B-purple.svg?style=for-the-badge&logo=pandas&logoColor=white" alt="Pandas">
 </p>
 
-This repository contains an end-to-end NLP project on "Hate Speech Detection Using Sentiment Analysis." The project leverages advanced transformer models (BERT, RoBERTa, and BERTweet) to classify toxic online content and includes a real-time text-filtering pipeline.
+This repository contains an end-to-end NLP project on "Hate Speech Detection Using Sentiment Analysis." The project leverages advanced transformer models (BERT, RoBERTa, and BERTweet) to classify toxic online content and concludes with a real-time text-filtering pipeline.
 
 ## 🎯 Project Overview & Business Problem
 
@@ -27,66 +27,93 @@ The dataset used is a popular collection of approximately 24,000 tweets, each an
 
 ## ⚙️ Methodology
 
-The project was divided into three main phases: EDA, Preprocessing, and Predictive Modeling.
+The project was divided into three main phases: Preprocessing, Exploratory Data Analysis (EDA), and Predictive Modeling.
 
-### 1. Data Preprocessing
-A rigorous text preprocessing pipeline was created to clean and normalize the tweet data for the models:
-* Converted all text to lowercase.
-* Removed URLs, user mentions (@), hashtags (#), and special characters.
-* Applied **Tokenization** to split tweets into individual words (tokens).
-* Applied **Lemmatization** to reduce words to their root form (e.g., "running" -> "run").
-* Removed common **stop-words** (e.g., "the", "a", "is") to reduce noise and focus on meaningful terms.
-
-### 2. Exploratory Data Analysis (EDA)
-EDA was performed to uncover insights into the dataset's composition. Key findings include:
-* **Class Imbalance:** The data is highly imbalanced. The "Offensive Language" class is dominant, while the "Hate Speech" class is a small minority. This imbalance presents a challenge for model training.
-* **Text Length:** Offensive and hateful tweets tend to have different character length distributions compared to neutral tweets.
-* **Common Terms:** Word clouds revealed the most frequent words in each category, helping to understand the distinct vocabularies of hate speech vs. neutral language.
+### 1. Preprocessing
+A rigorous text preprocessing pipeline was created to clean and normalize the raw tweet data for the models. This process is essential for reducing noise and improving model accuracy.
 
 <p align="center">
-  <img src="assets/eda_class_distribution.png" width="45%" alt="Distribution of Classes">
-  <img src="assets/eda_wordclouds.png" width="45%" alt="Word Clouds by Class">
+  <img src="assets/preprocessing_pipeline.png" width="80%" alt="Preprocessing Pipeline">
+</p>
+
+The key steps included:
+* **Text Cleaning:** Converted all text to lowercase and removed URLs, user mentions (@), hashtags (#), special characters, and extra spaces.
+* **Tokenization:** Split tweets into individual words (tokens).
+* **Lemmatization:** Reduced words to their root form (e.g., "running" -> "run") to consolidate their meaning.
+* **Stop-word Removal:** Eliminated common but non-meaningful words (e.g., "the", "a", "is") to help the model focus on important terms.
+
+### 2. Exploratory Data Analysis (EDA)
+EDA was performed to uncover insights into the dataset's composition and guide modeling strategies.
+
+**Class Imbalance:**
+The distribution of classes is highly imbalanced. The "Offensive Language" (Class 1) is the dominant class, while "Hate Speech" (Class 0) is a small minority (only ~6% of the data). This imbalance is a critical challenge, as the model could become biased towards the majority class and fail to identify the rare but important hate speech examples.
+
+<p align="center">
+  <img src="assets/eda_class_distribution.png" width="60%" alt="Distribution of Classes">
+</p>
+
+**Text Length Analysis:**
+Offensive and hateful tweets tend to have different character length distributions compared to neutral tweets. The boxplot shows that neutral tweets (Class 2) have a slightly more compact length, while offensive and hateful tweets show a wider range of lengths and more outliers.
+
+<p align="center">
+  <img src="assets/eda_char_boxplot.png" width="60%" alt="Boxplot of Character distribution by class">
+</p>
+
+**Key Term Analysis (Word Clouds):**
+Word clouds were generated to visualize the most frequent and unique words in each category. This helps to understand the distinct vocabularies used. The word "bitch" is notably prominent in "Hate Speech" and "Offensive Language," while "trash" and "pussy" are also common. The "Neither" category features more standard terms like "people" and "like."
+
+<p align="center">
+  <img src="assets/eda_wordcloud_hate.png" width="30%" alt="Hate Speech Word Cloud">
+  <img src="assets/eda_wordcloud_offensive.png" width="30%" alt="Offensive Language Word Cloud">
+  <img src="assets/eda_wordcloud_neither.png" width="30%" alt="Neither Word Cloud">
 </p>
 
 ### 3. Predictive Modeling
-Three powerful transformer models were fine-tuned and evaluated for this classification task:
+Three powerful, pre-trained transformer models were fine-tuned and evaluated for this classification task:
 * **BERT (bert-base-uncased):** The foundational transformer model, providing a strong baseline.
-* **BERTweet (vinai/bertweet-base):** A model specifically pre-trained on a massive corpus of English tweets, making it highly effective for informal, context-heavy tweet language.
+* **BERTweet (vinai/bertweet-base):** A model specifically pre-trained on a massive corpus of English tweets (850M tweets), making it highly effective for informal, context-heavy tweet language.
 * **RoBERTa (roberta-base):** A robustly optimized version of BERT that often achieves higher accuracy.
 
 ## 📈 Results & Key Findings
 
-All models were evaluated on their Precision, Recall, and F1-Score for the minority "Hate Speech" class. The results clearly show **RoBERTa** as the superior model for this task.
+All models were evaluated on their Precision, Recall, and F1-Score, with a focus on the minority "Hate Speech" (Class 0) category. The results clearly show **RoBERTa** as the superior model for this task.
 
 <p align="center">
   <img src="assets/model_comparison_chart.png" width="70%" alt="Model Performance Comparison">
-</p>
+</_p>
 
 **Key Finding:** RoBERTa achieved the best balance of Precision (93%) and Recall (93%), making it the most reliable model for accurately identifying hate speech while minimizing false positives.
 
-### Winning Model: RoBERTa
-The confusion matrix for RoBERTa shows its strong ability to distinguish between classes, especially for the critical "Hate Speech" (Class 0) category.
+### Model Performance Comparison (Confusion Matrices)
+The confusion matrices visually demonstrate the performance of each model. The ideal matrix would have high numbers on the diagonal (correct predictions) and low numbers off the diagonal (errors).
 
 <p align="center">
-  <img src="assets/roberta_confusion_matrix.png" width="60%" alt="RoBERTa Confusion Matrix">
+  <img src="assets/bert_confusion_matrix.png" width="30%" alt="BERT Confusion Matrix">
+  <img src="assets/bertweet_confusion_matrix.png" width="30%" alt="BERTweet Confusion Matrix">
+  <img src="assets/roberta_confusion_matrix.png" width="30%" alt="RoBERTa Confusion Matrix">
 </p>
+
+RoBERTa's matrix clearly shows the strongest performance, particularly in correctly identifying the "Hate Speech" (Class 0) and "Neither" (Class 2) categories.
 
 ## 🛡️ Hate Speech Filter (Final Pipeline)
 
 The final deliverable is a real-time detection and filtering pipeline. Using the trained RoBERTa model, the system predicts the class of a new, unseen tweet. If classified as "Hate Speech" (Class 0) or "Offensive" (Class 1), a profanity filter is applied to censor the offending words.
 
-Here are samples from the final output, showing the filter in action:
+Here are samples from the final output CSV, showing the filter in action:
+
+<p align="center">
+  <img src="assets/filter_results_table.png" width="80%" alt="Hate Speech Filter Results">
+</p>
 
 | Original Text | Predicted Class | Filtered Text |
 | :--- | :--- | :--- |
 | denial of normal the con be asked to comment on tragedies an emotional retard | 2 | denial of normal the con be asked to comment on tragedies an emotional retard |
 | just by being able to tweet this insufferable bullshit proves trump a nazi you vagina | 0 | just by being able to tweet this insufferable b******t proves trump a n*** you v****a |
 | that is retarded you too cute to be single that is life | 0 | that is r******d you too cute to be single that is life |
-| afro american basho | 2 | afro american basho |
 | straight girls go to hamburger mary once and start thinking they can say faggot | 0 | straight girls go to hamburger mary once and start thinking they can say f****t |
 
 ## 📌 Conclusion
-This project successfully validated the strength of transformer models in classifying complex, informal tweet language. The **RoBERTa model** proved to be the most effective.
+This project successfully validated the strength of transformer models in classifying complex, informal tweet language. The **RoBERTa model** proved to be the most effective, achieving an F1-Score of 0.93 for the critical "Hate Speech" class.
 
 The final pipeline provides a practical, AI-driven solution for social media platforms to automatically detect and moderate toxic content, helping to enforce community guidelines and create a safer online environment.
 
