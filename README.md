@@ -70,9 +70,9 @@ Offensive and hateful tweets tend to have different character length distributio
 Word clouds were generated to visualize the most frequent and unique words in each category. This helps to understand the distinct vocabularies used. The word "bitch" is notably prominent in "Hate Speech" and "Offensive Language," while "trash" and "pussy" are also common. The "Neither" category features more standard terms like "people" and "like."
 
 <p align="center">
-  <img src="assets/eda_wordcloud_hate.png" width="40%" alt="Hate Speech Word Cloud">
-  <img src="assets/eda_wordcloud_offensive.png" width="40%" alt="Offensive Language Word Cloud">
-  <img src="assets/eda_wordcloud_neither.png" width="40%" alt="Neither Word Cloud">
+  <img src="assets/eda_wordcloud_hate.png" width="30%" alt="Hate Speech Word Cloud">
+  <img src="assets/eda_wordcloud_offensive.png" width="30%" alt="Offensive Language Word Cloud">
+  <img src="assets/eda_wordcloud_neither.png" width="60%" alt="Neither Word Cloud">
 </p>
 
 ### 3. Predictive Modeling
@@ -95,9 +95,9 @@ All models were evaluated on their Precision, Recall, and F1-Score, with a focus
 The confusion matrices visually demonstrate the performance of each model. The ideal matrix would have high numbers on the diagonal (correct predictions) and low numbers off the diagonal (errors).
 BERT | BERTweet | RoBERTa
 <p align="center">
-  <img src="assets/bert_confusion_matrix.png" width="40%" alt="BERT Confusion Matrix">
-  <img src="assets/bertweet_confusion_matrix.png" width="40%" alt="BERTweet Confusion Matrix">
-  <img src="assets/roberta_confusion_matrix.png" width="40%" alt="RoBERTa Confusion Matrix">
+  <img src="assets/bert_confusion_matrix.png" width="30%" alt="BERT Confusion Matrix">
+  <img src="assets/bertweet_confusion_matrix.png" width="30%" alt="BERTweet Confusion Matrix">
+  <img src="assets/roberta_confusion_matrix.png" width="30%" alt="RoBERTa Confusion Matrix">
 </p>
 
 RoBERTa's matrix clearly shows the strongest performance, particularly in correctly identifying the "Hate Speech" (Class 0) and "Neither" (Class 2) categories.
