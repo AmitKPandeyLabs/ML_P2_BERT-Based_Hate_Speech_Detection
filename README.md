@@ -33,7 +33,7 @@ The project was divided into three main phases: Preprocessing, Exploratory Data 
 A rigorous text preprocessing pipeline was created to clean and normalize the raw tweet data for the models. This process is essential for reducing noise and improving model accuracy.
 
 <p align="center">
-  <img src="assets/preprocessing_pipeline.png" width="80%" alt="Preprocessing Pipeline">
+  <img src="assets/preprocessing_pipeline_new.png" width="80%" alt="Preprocessing Pipeline">
 </p>
 
 The key steps included:
