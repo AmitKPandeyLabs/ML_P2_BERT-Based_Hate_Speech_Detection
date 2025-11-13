@@ -49,14 +49,21 @@ EDA was performed to uncover insights into the dataset's composition and guide m
 The distribution of classes is highly imbalanced. The "Offensive Language" (Class 1) is the dominant class, while "Hate Speech" (Class 0) is a small minority (only ~6% of the data). This imbalance is a critical challenge, as the model could become biased towards the majority class and fail to identify the rare but important hate speech examples.
 
 <p align="center">
-  <img src="assets/eda_class_distribution.png" width="60%" alt="Distribution of Classes">
+  <img src="assets/eda_class_distribution.png" width="80%" alt="Distribution of Classes">
 </p>
 
 **Text Length Analysis:**
 Offensive and hateful tweets tend to have different character length distributions compared to neutral tweets. The boxplot shows that neutral tweets (Class 2) have a slightly more compact length, while offensive and hateful tweets show a wider range of lengths and more outliers.
 
 <p align="center">
-  <img src="assets/eda_char_boxplot.png" width="60%" alt="Boxplot of Character distribution by class">
+  <img src="assets/eda_char_plots.png" width="60%" alt="Boxplot of Character distribution by class">
+</p>
+
+**Exploratory Data Analysis – Correlation & Density:**
+Offensive and hateful tweets tend to have different character length distributions compared to neutral tweets. The boxplot shows that neutral tweets (Class 2) have a slightly more compact length, while offensive and hateful tweets show a wider range of lengths and more outliers.
+
+<p align="center">
+  <img src="assets/eda_corr_density.png" width="60%" alt="Boxplot of Character distribution by class">
 </p>
 
 **Key Term Analysis (Word Clouds):**
