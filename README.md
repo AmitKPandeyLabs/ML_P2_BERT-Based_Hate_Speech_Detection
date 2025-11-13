@@ -163,7 +163,7 @@ To further improve this project and its practical applicability, several key are
 * **Scikit-learn (sklearn):** Employed for comprehensive model evaluation metrics, including Confusion Matrices, F1-Score, Precision, and Recall.
 * **Jupyter Notebook:** Used extensively for interactive development, experimentation, and presenting analysis results.
 
-## 🚀 How to Run This Project
+## ▶️ How to Run This Project
 This project is split into two notebooks: one for EDA and one for modeling.
 
 1.  Clone this repository:
