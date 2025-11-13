@@ -181,10 +181,4 @@ This project is split into two notebooks: one for EDA and one for modeling.
 4.  Run the notebooks:
     * For exploratory analysis: `jupyter notebook EDA_Hate_Speech_Detection.ipynb`
     * For model training and filtering: `jupyter notebook Predictive_Modelling_BERT_Based_Hate_Speech_Detection.ipynb`
-5.  **Required Files:** To run this project, you will need the original dataset (not included) and a `profanity-list.txt` file (used by the filtering script). Please ensure these are placed in the appropriate project directories as referenced in the notebooks.
-
-## ✉️ Contact
-For any questions, suggestions, or collaborations, feel free to reach out:
-* **Amit K. Pandey**
-* **Email:** your.email@example.com (Consider adding your professional email)
-* **LinkedIn:** [Your LinkedIn Profile URL] (Add your actual LinkedIn URL)
+5.  **Required Files:** To run this project, you will need the original dataset (included - labeled_data.csv) and a `profanity-list.txt` file (This file is used by the filtering script and add this if you would like the filtering pipeline to work. You can have your own list of custom filters as desired). Please ensure these are placed in the appropriate project directories as referenced in the notebooks.
