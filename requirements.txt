@@ -1,0 +1,18 @@
+# Core Libraries
+torch>=1.13.0 # PyTorch, as specified in README
+transformers>=4.20.0 # Hugging Face Transformers
+pandas>=2.0.0 # Data manipulation
+numpy>=1.20.0 # Numerical operations, often a dependency of pandas/torch
+scikit-learn>=1.0.0 # For evaluation metrics (F1-score, Confusion Matrix)
+
+# NLP Specific (for preprocessing)
+nltk>=3.6.0 # Natural Language Toolkit for tokenization, lemmatization, stop-word removal
+
+# Visualization (for EDA and results)
+matplotlib>=3.5.0 # General plotting
+seaborn>=0.11.0 # Enhanced statistical plotting (often used with pandas/matplotlib)
+wordcloud>=1.8.1 # For generating word clouds
+
+# Jupyter (if running notebooks)
+jupyterlab>=3.0.0
+ipykernel>=6.0.0 # For Jupyter notebooks
