@@ -94,7 +94,7 @@ All models were evaluated on their Precision, Recall, and F1-Score, with a focus
 ### Model Performance Comparison (Confusion Matrices)
 The confusion matrices visually demonstrate the performance of each model. The ideal matrix would have high numbers on the diagonal (correct predictions) and low numbers off the diagonal (errors).
 
-<h2 align="center">BERT | BERTTweet | RoBERTa</h1>
+<h3 align="center">BERT | BERTTweet | RoBERTa</h3>
 <p align="center">
   <img src="assets/bert_confusion_matrix.png" width="30%" alt="BERT Confusion Matrix">
   <img src="assets/bertweet_confusion_matrix.png" width="30%" alt="BERTweet Confusion Matrix">
