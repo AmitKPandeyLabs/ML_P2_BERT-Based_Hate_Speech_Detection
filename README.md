@@ -151,6 +151,6 @@ This project is split into two notebooks: one for EDA and one for modeling.
     pip install -r requirements.txt
     ```
 4.  Run the notebooks:
-    * For exploratory analysis: `jupyter notebook BUAN6342_GROUP_3_EDA_Hate_Speech_Detection.ipynb`
-    * For model training and filtering: `jupyter notebook BUAN6342_GROUP_3_Predictive_Modelling_BERT_Based_Hate_Speech_Detection.ipynb`
+    * For exploratory analysis: `jupyter notebook EDA_Hate_Speech_Detection.ipynb`
+    * For model training and filtering: `jupyter notebook Predictive_Modelling_BERT_Based_Hate_Speech_Detection.ipynb`
 5.  **Required Files:** To run this project, you will need the original dataset (not included) and a `profanity-list.txt` file (used by the filtering script).
